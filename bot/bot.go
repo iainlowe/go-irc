@@ -1,6 +1,6 @@
 package bot
 
-import "github.com/ilowe/irc"
+import "github.com/ilowe/go-irc"
 
 type Bot struct {
 }
