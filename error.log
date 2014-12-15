@@ -1,0 +1,45 @@
+panic: runtime error: index out of range
+
+goroutine 22 [running]:
+runtime.panic(0x57e6e0, 0x69041c)
+	/usr/local/go/src/pkg/runtime/panic.c:279 +0xf5
+github.com/ilowe/irc/chatter/ui.func·002()
+	/home/ilowe/go/src/github.com/ilowe/irc/chatter/ui/ui.go:215 +0x7f2
+created by github.com/ilowe/irc/chatter/ui.(*UI).Loop
+	/home/ilowe/go/src/github.com/ilowe/irc/chatter/ui/ui.go:236 +0x28b
+
+goroutine 16 [select]:
+github.com/nsf/termbox-go.PollEvent(0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0)
+	/home/ilowe/go/src/github.com/nsf/termbox-go/api.go:245 +0x396
+github.com/ilowe/irc/chatter/ui.(*UI).Loop(0xc208004300)
+	/home/ilowe/go/src/github.com/ilowe/irc/chatter/ui/ui.go:252 +0x3bd
+github.com/ilowe/irc/chatter/ui.Loop()
+	/home/ilowe/go/src/github.com/ilowe/irc/chatter/ui/ui.go:110 +0x2a
+main.main()
+	/home/ilowe/go/src/github.com/ilowe/irc/chatter/main.go:12 +0x90
+
+goroutine 19 [finalizer wait, 2 minutes]:
+runtime.park(0x412ec0, 0x693b98, 0x6926c9)
+	/usr/local/go/src/pkg/runtime/proc.c:1369 +0x89
+runtime.parkunlock(0x693b98, 0x6926c9)
+	/usr/local/go/src/pkg/runtime/proc.c:1385 +0x3b
+runfinq()
+	/usr/local/go/src/pkg/runtime/mgc0.c:2644 +0xcf
+runtime.goexit()
+	/usr/local/go/src/pkg/runtime/proc.c:1445
+
+goroutine 20 [syscall]:
+os/signal.loop()
+	/usr/local/go/src/pkg/os/signal/signal_unix.go:21 +0x1e
+created by os/signal.init·1
+	/usr/local/go/src/pkg/os/signal/signal_unix.go:27 +0x32
+
+goroutine 21 [select]:
+github.com/nsf/termbox-go.func·001()
+	/home/ilowe/go/src/github.com/nsf/termbox-go/api.go:87 +0x41a
+created by github.com/nsf/termbox-go.Init
+	/home/ilowe/go/src/github.com/nsf/termbox-go/api.go:106 +0x82e
+
+goroutine 17 [syscall, 2 minutes]:
+runtime.goexit()
+	/usr/local/go/src/pkg/runtime/proc.c:1445
